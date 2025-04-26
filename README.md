@@ -39,16 +39,16 @@ and other code to reduce the workload of manual writing and improve development 
 
 ```mermaid
 sequenceDiagram
-    participant Frontend as 前端
-    participant Backend as 后端
+    participant Frontend as Front-end
+    participant Backend as Backend
     participant Kronos as Kronos ORM
-    participant DB as 目标数据库
-    Frontend ->> Backend: POST /api/connect (含数据库配置)
-    Backend ->> Kronos: 初始化连接池
-    Kronos ->> DB: 执行元数据查询
-    DB -->> Kronos: 返回表结构数据
-    Kronos -->> Backend: 转换为统一元数据模型
-    Backend -->> Frontend: 返回TableMeta列表
+    participant DB as Target database
+    Frontend ->> Backend: POST /api/connect (Includes database configuration)
+    Backend ->> Kronos: Initialize connection pool
+    Kronos ->> DB: Execute metadata query
+    DB -->> Kronos: Return the table structure data
+    Kronos -->> Backend: Convert to a unified metadata model
+    Backend -->> Frontend: Returns the TableMeta list
 ```
 
 ## Function Module
